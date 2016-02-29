@@ -1,0 +1,26 @@
+<ion-header-bar class="bar-stable" style="background:transparent;padding-left: 15px;padding-right: 15px;border: 0;">
+
+</ion-header-bar>
+<ion-content style="top: 0;">
+    <div style="width: 40%;margin: auto;margin-top:88px;margin-bottom: 88px;">
+        <img ng-src="{{authLogo.src}}" style="width: 100%;height: 100%;">
+    </div>
+    <div class="list list-inset">
+        <label class="item item-input">
+            <i class="icon ion-iphone placeholder-icon"></i>
+            <input type="tel" placeholder="Phone Number" ng-model="number" ng-required="true">
+        </label>
+        <label class="item item-input">
+            <i class="icon ion-ios-person-outline placeholder-icon"></i>
+            <input type="text" placeholder="First Name" ng-model="fname" ng-required="true" capitalize>
+        </label>
+        <label class="item item-input">
+            <i class="icon ion-ios-person-outline placeholder-icon"></i>
+            <input type="text" placeholder="Last Name" ng-model="lname" ng-required="true" capitalize>
+        </label>
+    </div>
+    <div class="list list-inset">
+         <button class="button button-block button-positive activated btn" ng-click="sendNumber(number, fname, lname)">Register</button>
+    </div>
+</form>
+</ion-content>

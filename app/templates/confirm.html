@@ -1,0 +1,35 @@
+<ion-header-bar class="bar-stable" align-title="center" style="background-color: #f6cc4c">
+    <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="backToRegister()"></button>
+    <h1 class="title">Verify Your Phone</h1>
+</ion-header-bar>
+<ion-content id="modal-confirm">
+    <div class="outer">
+        <div class="middle">
+            <div class="padding">
+                <div class="list list-inset">
+                    <div>
+                        <center>
+                            <p>Type your verification code here</p>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="item item-input" style="padding-left: 0;">
+                                <input type="tel" ng-model="confirm_code" maxlength="4" style="padding: 0;text-align: center;">
+                            </label>
+                        </div>
+                    </div>
+                    <center>
+                        <span ng-bind="response" style="color:#F16A6A"></span>
+                    </center>
+                </div>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive activated btn" ng-click="goVerify(confirm_code)">Verify</button>
+                <a href="#">
+                    <p class="title" ng-click="resendCode()" style="text-align: center;color: #F16A6A;letter-spacing: 1px;font-weight: bold;font-size: 12px;">RESEND CODE</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</ion-content>

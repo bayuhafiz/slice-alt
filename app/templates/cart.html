@@ -1,0 +1,104 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <h1 class="title">CHECKOUT</h1>
+        <button class="button button-icon" ng-click="openPizzaMenuFromCart()">
+            <i class="icon ion-ios-close-empty"></i>
+        </button>
+    </ion-header-bar>
+    <ion-content style="background:#f7f7f7">
+        <div class="map">
+            <div ng-show="!staticMap.length" style="position:absolute;width: 100%;height: 100%;display: table;">
+                <ion-spinner icon="ripple" class="spinner spinner-dots" style="margin: auto;position: absolute;left: 0;right: 0;text-align: center;top: 60px;"></ion-spinner>
+            </div>
+            <div id="map" ng-click="openAddressModal();"><img ng-src="{{staticMap}}" alt="Description" /></div>
+            <!--<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>-->
+            <div style="width: 100%;height: 45px;background: #f6cc4c;color: #000;text-align: center;line-height: 38px;font-weight: bold;letter-spacing: 3px;font-family: 'avenir_medium';font-size: 12px;padding: 0 13px;" ng-click="openAddressModal()">
+                <div class="row">
+                    <div class="col-90">
+                        <p style="width: 100%; word-wrap: break-word; white-space: nowrap;overflow: hidden; text-overflow: ellipsis;margin:0">{{cartAddress}}</p>
+                    </div>
+                    <div class="col-10">
+                        <i class="icon-right ion-ios-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item ng-show="!items.length && !drinks.length">
+                <p style="text-align: center;padding: 30px 0;letter-spacing: 1px;font-weight: bold;">Cart is Empty</p>
+            </ion-item>
+            <ion-item style="border: 0;" ng-repeat="item in items" class="summary">
+                <div class="summary-list" style="position:relative;top:-3px">
+                    <div class="plusMinus" ng-click="increasePizza($index, item)">
+                        <span>+</span>
+                    </div>
+                    <div class="num" style="font-family: 'montserratRegular';">{{item.quantity}}</div>
+                    <div class="plusMinus" ng-click="decreasePizza($index, item)">
+                        <span>-</span>
+                    </div>
+                </div>
+                <div class="summary-list" style="margin-right: 0;">
+                    <h2>{{item.name}} </h2>
+                    <p>Size type - <span>{{item.size}}</span> </p>
+                    <p>Crust type - <span>{{item.crust}}</span></p>
+                    <p style="word-wrap: break-word;white-space: normal;">Request - <span>{{item.request}}</span></p>
+                </div>
+                <div class="summary-list">
+                    <h3>IDR {{kFormatter(item.price)}}</h3>
+                </div>
+                <ion-option-button class="button-assertive" ng-click="onItemDelete(item)" style="background: #F7F7F7!important;">
+                    <i class="icon ion-ios-trash-outline"></i>
+                </ion-option-button>
+                <ion-option-button class="button-balanced" ng-click="openEditModal($index)" style="background: #A2A2A2!important;">
+                    <i class="icon ion-ios-compose-outline"></i>
+                </ion-option-button>
+            </ion-item>
+            <ion-item style="border: 0;" ng-repeat="drink in drinks" class="summary">
+                <div class="summary-list" style="position:relative;top:-3px">
+                    <div class="plusMinus" ng-click="increaseDrink($index, drink)">
+                        <span>+</span>
+                    </div>
+                    <div class="num" style="font-family: 'montserratRegular';">{{drink.qty}}</div>
+                    <div class="plusMinus" ng-click="decreaseDrink($index, drink)">
+                        <span>-</span>
+                    </div>
+                </div>
+                <div class="summary-list" style="margin-right: 0;">
+                    <h2>{{drink.name}}</h2>
+                </div>
+                <div class="summary-list">
+                    <h3 >IDR {{kFormatter(drink.price * drink.qty)}}</h3>
+                </div>
+                <ion-option-button class="button-assertive" ng-click="onItemDeleteDrink(drink)" style="background: #F7F7F7!important;">
+                    <i class="icon ion-ios-trash-outline"></i>
+                </ion-option-button>
+            </ion-item>
+            <!--<ion-item class="cart item-icon-left" ng-click="openPizzaMenuFromCart()" style="padding-top: 20px;border-color: #ECECEC;">
+                <div>
+                    <i class="icon ion-ios-plus-empty" style="font-size: 30px;"></i>
+                    <p style="letter-spacing: 1px;font-size: 15px;font-family: 'avenir_medium';color: #000;">ADD PIZZA</p>
+                </div>
+            </ion-item>-->
+            <div>
+                <ion-item class="cart" ng-click="" style="padding: 15px 0 8px 0;margin: 0 10px 0 10px;border-left-width: 0;border-right-width: 0;background: transparent;font-family: 'avenir_medium';">
+                    <div class="row">
+                        <div class="col">
+                            <p style="font-size: 0.8em;font-weight: 600;letter-spacing: 1px;color: #A2A2A2; position: relative;top: -2px;">PAYMENT</p>
+                        </div>
+                        <div class="col">
+                            <p style="text-align: right;font-size: 0.8em;color:#000;position: relative;top: -2px;">CASH ON DELIVERY</p>
+                        </div>
+                    </div>
+                </ion-item>
+                <div class="padding">
+                    <button class="button button-block button-positive activated btn" ng-click="finishOrder()" style="margin-top: 10px; line-height: 25px;    padding-top: 8px;">
+                        <span style="width:100%;display:block">PLACE ORDER</span>
+                        <span style="width:100%;display:block;position:relative;top: -7px;"> IDR {{kFormatter(totalPrice)}} </span>
+                    </button>
+                    <span ng-bind="response"></span>
+                    <p style="text-align:center;font-family: 'avenir_medium';font-size: 10px;">INCLUDES TAX, TIP, AND DELIVERY</p>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeAddressModal()"></button>
+        <h1 class="title">My Addresses</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item class="item-icon-right" ng-repeat="item in addressList" ng-click="setFavAddress({{item.uid}})">
+                <p>{{item.address}} No. {{item.number}}</p>
+                <p>{{item.addAddress}}</p>
+                <i class="icon ion-ios-star" ng-show="item.status == 1"></i>
+                <i class="icon ion-ios-star-outline" ng-show="item.status == 0"></i>
+                <ion-option-button class="button-assertive" ng-click="deleteAddress({{item.uid}})">Delete</ion-option-button>
+            </ion-item>
+            <ion-item class="cart item-icon-left" ng-click="addAddress('continue')">
+                <i class="icon ion-ios-plus-outline"></i> ADD ADDRESS
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</div>

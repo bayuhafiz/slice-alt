@@ -1,0 +1,46 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <!--<a href="#/cart">-->
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="backEditModal()"></button>
+        <!--</a>-->
+        <h1 class="title">Edit Your Pizza</h1>
+    </ion-header-bar>
+    <ion-content class="order-pizza">
+        <div class="pizza-name">
+            <h4>{{orderedByIndex.name}}</h4>
+            <p>IDR {{kFormatter(orderedByIndex.price)}}</p>
+        </div>
+        <div class="crust-name">
+            Crust Type
+        </div>
+        <div class="padding">
+            <ion-list>
+                <ion-radio ng-repeat="crust in orderedByIndex.allCrust" ng-value="crust.id" ng-model="select.crust">
+                    {{crust.name}}
+                </ion-radio>
+            </ion-list>
+        </div>
+        <div class="crust-name" style="padding-top:50px">
+            Size Type
+        </div>
+        <div class="padding">
+            <ion-list>
+                <ion-radio ng-repeat="sizeType in orderedByIndex.allSizeType" ng-value="sizeType.id" ng-model="select.sizeType" name="size-type" ng-change="onSizeChange(sizeType.id)">
+                    {{ sizeType.type}}
+                </ion-radio>
+            </ion-list>
+        </div>
+        <div class="crust-name" style="padding-top:50px">
+            Special Request
+        </div>
+        <div class="padding">
+            <label class="item-input-wrapper" style="padding-right:0;padding-left:0;border-radius: 6px;">
+                <textarea ng-model="request" ng-value="request">{{request}}</textarea>
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive activated btn" ng-click="updateItem(select.crust, select.sizeType, request)">Update Pizza</button>
+            <!--</a>-->
+        </div>
+    </ion-content>
+</div>

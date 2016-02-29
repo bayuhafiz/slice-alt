@@ -1,0 +1,17 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" style="background:transparent;padding-left: 15px;padding-right: 15px;border: 0;">
+    </ion-header-bar>
+    <ion-content style="top: 0;" has-bouncing="false">
+        <div class="title location-service-app" style="height : {{imgHeight.height}}px">
+            <div id="intro-title">
+                <p style="font-family: avenir_black;font-size: 25px;letter-spacing: 4px;width: 95%;margin: auto;line-height: 40px;text-transform: uppercase;">we can’t find your location
+                </p>
+                <hr style="width: 250px; border-color: #565656; margin-top: 30px;">
+                <p style="font-family: avenir_light;font-size: 13px;text-transform: none;">Turn on Location Services in Settings >
+                    <br>Privacy to allow Maps to determine
+                    <br>your current location</p>
+            </div>
+            <button class="button button-block button-positive activated add_pizza_btn btn" ng-click="try_location()">TRY AGAIN</button>
+        </div>
+    </ion-content>
+</div>

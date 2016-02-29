@@ -1,0 +1,30 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeAddressSummaryModal()"></button>
+        <h1 class="title">Your Address</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Address :</span>
+                        <textarea placeholder="Street Name" ng-model="fullAddress" id="fullAddress" msd-elastic>{{fullAddress}}</textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Additional Detail :</span>
+                        <textarea placeholder="Eg. landmark, building name, floor" ng-model="additional" style="min-height: 150px;margin-top: 18px;"></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive activated btn" ng-click="saveLocation(fullAddress, additional)">Add Address</button>
+            <span ng-bind="response"></span>
+        </div>
+    </ion-content>
+</div>

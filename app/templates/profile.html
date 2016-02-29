@@ -1,0 +1,39 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeProfileModal()"></button>
+        <h1 class="title">My Profile</h1>
+        <!--<button class="button button-icon" >
+            <i class="icon ion-ios-close-empty"></i>
+        </button>-->
+    </ion-header-bar>
+    <ion-content id="modal-profile"> 
+        <div class="outer">
+            <div class="middle">
+                <div class="padding">
+                    <div class="list">
+                        <div class="row p-l-0 p-r-0">
+                            <div class="col">
+                                <label class="item item-input">
+                                    <input type="text" ng-model="profileItems.firstName" capitalize>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row p-l-0 p-r-0">
+                            <div class="col">
+                                <label class="item item-input">
+                                    <input type="text" ng-model="profileItems.lastName" capitalize>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padding">
+                    <button class="button button-block button-positive activated btn" ng-click="saveProfile(profileItems.firstName, profileItems.lastName)">SAVE PROFILE</button>
+                    <a href="#" ng-click="deleteAccount(profileItems.phoneNumber)">
+                        <p class="title" style="text-align: center;color: #F16A6A;letter-spacing: 1px;font-weight: bold;font-size: 12px;">DELETE ACCOUNT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</div>

@@ -1,0 +1,413 @@
+[ {
+    "name": "Classic Pepperoni",
+    "image_id": 0,
+    "price_":"140000",
+    "price":"140000",
+    "description":"Tomato Reduction base, pepperoni, ham, mushroom, artichoke and capers",
+    "about": "Lorem Ipsum 5 adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.",
+    "sizeType" : [
+      {
+        "id":"Regular",
+        "type":"Regular"
+      },
+      {
+        "id":"Large",
+        "type":"Large +20K"
+      }
+    ],
+    "crust": [
+      {
+        "id" : "Thin",
+        "name": "Thin"
+      },
+      {
+        "id" : "Thick",
+        "name": "Thick"
+      }
+    ],
+    "cheese":[
+      {
+        "name":"cheese 1"
+      },
+      {
+        "name":"cheese 2"
+      },
+      {
+        "name":"cheese 3"
+      }
+    ],
+    "sauce":[
+      {
+        "name":"sauce 1"
+      },
+      {
+        "name":"sauce 2"
+      },
+      {
+        "name":"sauce 3"
+      }
+    ],
+    "topping":[
+      {
+        "name":"topping 1"
+      },
+      {
+        "name":"topping 2"
+      },
+      {
+        "name":"topping 3"
+      }
+    ],
+    "ingredient":[
+      {
+        "name": "bbq sauce",
+        "url": "bbq_sauce"
+      },
+      {
+        "name": "black olives",
+        "url":"black_olives"
+      },
+      {
+        "name": "garlic cloves",
+        "url": "Garlic-cloves---do-you-kn-008"
+      },
+      {
+        "name": "mozarella cheese",
+        "url":"mozarella_cheese"
+      }
+    ]
+  },
+  {
+    "name": "Tandoori Chicken ",
+    "image_id": 1,
+    "price_":"150000",
+    "price":"150000",
+    "description":"Mozzarella, Tandoori Marinated chicken, red peppers, crispy sage and parmesan.",
+    "about": "Lorem Ipsum 2 adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.",
+    "sizeType" : [
+      {
+        "id":"Regular",
+        "type":"Regular"
+      },
+      {
+        "id":"Large",
+        "type":"Large +20K"
+      }
+    ],
+    "crust": [
+      {
+        "id" : "Thin",
+        "name": "Thin"
+      },
+      {
+        "id" : "Thick",
+        "name": "Thick"
+      },
+      {
+        "id" : "Medium",
+        "name": "Medium"
+      },
+      {
+        "id" : "Soft",
+        "name": "Soft"
+      },
+      {
+        "id" : "Cracker",
+        "name": "Cracker"
+      }
+    ],
+    "cheese":[
+      {
+        "name":"cheese 1"
+      },
+      {
+        "name":"cheese 2"
+      },
+      {
+        "name":"cheese 3"
+      }
+    ],
+    "sauce":[
+      {
+        "name":"sauce 1"
+      },
+      {
+        "name":"sauce 2"
+      },
+      {
+        "name":"sauce 3"
+      }
+    ],
+    "topping":[
+      {
+        "name":"topping 1"
+      },
+      {
+        "name":"topping 2"
+      },
+      {
+        "name":"topping 3"
+      }
+    ],
+    "ingredient":[
+      {
+        "name": "garlic clove",
+        "url": "garlic_clove"
+      },
+      {
+        "name": "ham",
+        "url": "ham"
+      },
+      {
+        "name": "jalapeno",
+        "url": "jalapeno"
+      }
+    ]
+  },
+  {
+    "name": "Turkey Ham & Truffle",
+    "image_id": 2,
+    "price_":"160000",
+    "price":"160000",
+    "description":"Mozzarella, dried cherry tomatos, parmesan, wine, turkey ham, rocket & truffle oil.",
+    "about": "Lorem Ipsum 3 adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.",
+    "sizeType" : [
+      {
+        "id":"Regular",
+        "type":"Regular"
+      },
+      {
+        "id":"Large",
+        "type":"Large +20K"
+      }
+    ],
+    "crust": [
+      {
+        "id" : "Thin",
+        "name": "Thin"
+      },
+      {
+        "id" : "Thick",
+        "name": "Thick"
+      }
+    ],
+    "cheese":[
+      {
+        "name":"cheese 1"
+      },
+      {
+        "name":"cheese 2"
+      },
+      {
+        "name":"cheese 3"
+      }
+    ],
+    "sauce":[
+      {
+        "name":"sauce 1"
+      },
+      {
+        "name":"sauce 2"
+      },
+      {
+        "name":"sauce 3"
+      }
+    ],
+    "topping":[
+      {
+        "name":"topping 1"
+      },
+      {
+        "name":"topping 2"
+      },
+      {
+        "name":"topping 3"
+      }
+    ],
+    "ingredient":[
+      {
+        "name": "onions",
+        "url": "onions"
+      },
+      {
+        "name": "parsley",
+        "url": "Parsley"
+      },
+      {
+        "name": "salami",
+        "url": "salami"
+      }
+    ]
+  },
+  {
+    "name": "Pesto Mushroom",
+    "image_id": 3,
+    "price_":"170000",
+    "price":"170000",
+    "description":"Pesto, Portobello mushrooms,caramelised onions, mozzarella and garlic",
+    "about": "Lorem Ipsum 4 adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.",
+    "sizeType" : [
+      {
+        "id":"Regular",
+        "type":"Regular"
+      },
+      {
+        "id":"Large",
+        "type":"Large +20K"
+      }
+    ],
+    "crust": [
+      {
+        "id" : "Thin",
+        "name": "Thin"
+      },
+      {
+        "id" : "Thick",
+        "name": "Thick"
+      }
+    ],
+    "cheese":[
+      {
+        "name":"cheese 1"
+      },
+      {
+        "name":"cheese 2"
+      },
+      {
+        "name":"cheese 3"
+      }
+    ],
+    "sauce":[
+      {
+        "name":"sauce 1"
+      },
+      {
+        "name":"sauce 2"
+      },
+      {
+        "name":"sauce 3"
+      }
+    ],
+    "topping":[
+      {
+        "name":"topping 1"
+      },
+      {
+        "name":"topping 2"
+      },
+      {
+        "name":"topping 3"
+      }
+    ],
+    "ingredient":[
+      {
+        "name": "tomatoes",
+        "url":"tomatoes1"
+      },
+      {
+        "name": "tuna",
+        "url": "tuna"
+      }
+    ]
+  },
+  {
+    "name": "Margherita",
+    "image_id": 4,
+    "price_":"180000",
+    "price":"180000",
+    "description":"Tomato Reduction base, cherry tomatoes, mozzarella and freshly torn basil",
+    "about": "Lorem Ipsum 1 adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.",
+    "sizeType" : [
+      {
+        "id":"Regular",
+        "type":"Regular"
+      },
+      {
+        "id":"Large",
+        "type":"Large +20K"
+      }
+    ],
+    "crust" : [
+      {
+        "id" : "Thin",
+        "name": "Thin"
+      },
+      {
+        "id" : "Thick",
+        "name": "Thick"
+      },
+      {
+        "id" : "Medium",
+        "name": "Medium"
+      }
+    ],
+    "cheese":[
+      {
+        "id" : "cheese1",
+        "name":"cheese 1"
+      },
+      {
+        "id" : "cheese2",
+        "name":"cheese 2"
+      },
+      {
+        "id" : "cheese3",
+        "name":"cheese 3"
+      }
+    ],
+    "sauce":[
+      {
+        "id" : "sauce1",
+        "name":"sauce 1"
+      },
+      {
+        "id" : "sauce2",
+        "name":"sauce 2"
+      },
+      {
+        "id" : "sauce3",
+        "name":"sauce 3"
+      }
+    ],
+    "topping":[
+      {
+        "id" : "topping1",
+        "name":"topping 1"
+      },
+      {
+        "id" : "topping2",
+        "name":"topping 2"
+      },
+      {
+        "id" : "topping3",
+        "name":"topping 3"
+      }
+    ],
+    "ingredient":[
+      {
+        "name": "chicken",
+        "url": "chicken"
+      },
+      {
+        "name": "chives",
+        "url": "chives"
+      },
+      {
+        "name": "corn",
+        "url": "corn"
+      },
+      {
+        "name": "Extra Cheese",
+        "url": "extracheese"
+      },
+      {
+        "name": "Oregano",
+        "url": "Oregano"
+      },
+      {
+        "name": "Pineapple",
+        "url": "Pineapple"
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeOrdersModal()"></button>
+        <h1 class="title">Orders</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-item class="cart" ng-if="!orderList.length">
+                No Order.
+            </ion-item>
+            <a href="#" class="item item-icon-right" ng-click="detailOrder(item, $index)" ng-repeat="item in orderList | orderBy: '-date'">
+                <p>Order Number : #{{ item.number }}</p>
+                <p>Order Date : {{ item.date | date:'mediumDate'}} </p>
+                <!--<ion-option-button class="button-balanced" ng-click="openDetailOrderModal($index)">Detail</ion-option-button>-->
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </ion-list>
+    </ion-content>
+</div>

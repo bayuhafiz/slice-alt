@@ -1,0 +1,67 @@
+<ion-header-bar class="bar-stable" style="background: transparent; border: 0;">
+    <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeOrderDetailModal()" style=" color: #fff;"></button>
+    <h1 class="title"></h1>
+</ion-header-bar>
+<ion-content style="top:0">
+    <div class="countTime">
+        <h2>YOUR PIZZA IS BEING COOKED</h2>
+        <p>Est time of arrival</p>
+        <div class="countTimeBg">
+            <img src="img/countTimeBg.png" id="bg">
+            <div style="position: relative;top: -90px;">
+                <p style="font-style: normal;font-size: 25px;line-height: 50px;">
+                    <timer countdown="sisaWaktu" max-time-unit="'minute'" interval="1000" id="countdown">{{mminutes}}:{{sseconds}}</timer>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--<p>Kamu belum Order</p>-->
+    <ion-list show-delete="false" can-swipe="true">
+        <ion-item class="cart" style="text-align:center; padding-top: 17px;padding-bottom: 0px;">
+            <h2 style="font-family: 'bebasNeueRegular'; font-size: 27px;"> #{{ orderDetail.number }} &bull; {{ orderDetail.date | date:'dd MMM yyyy HH:mm' }} </h2>
+        </ion-item>
+        <ion-item style="border: 0;" ng-repeat="pizza in orderDetail.pizza">
+            <div class="summary-list">
+                <div class="num" style="line-height: 23px;">{{pizza.quantity}}</div>
+            </div>
+            <div class="summary-list">
+                <h2>{{pizza.name}}</h2>
+                <p>Size type - {{pizza.size}}</p>
+                <p>Crust type - {{pizza.crust}}</p>
+                <p style="width: 200px;word-break: break-all;white-space: normal;">Request - {{pizza.request}}</p>
+            </div>
+            <div class="summary-list">
+                <h3>IDR {{kFormatter(pizza.price)}}</h3>
+            </div>
+        </ion-item>
+        <ion-item style="border: 0;" ng-repeat="drink in orderDetail.drinks" class="summary">
+            <div class="summary-list">
+                <div class="num" style="line-height: 23px;">{{drink.qty}}</div>
+            </div>
+            <div class="summary-list" style="margin-right: 0;">
+                <h2>{{drink.name}}</h2>
+            </div>
+            <div class="summary-list">
+                <h3>IDR {{kFormatter(drink.price * drink.qty)}}</h3>
+            </div>
+            <ion-option-button class="button-assertive" ng-click="onItemDeleteDrink(drink)" style="background: #F7F7F7!important;">
+                <i class="icon ion-ios-trash-outline"></i>
+            </ion-option-button>
+        </ion-item>
+        <ion-item style="border:0">
+            <div style="width:100%;text-align:right">
+                <h3 style="font-weight: bold;font-size: 18px;font-family: 'avenir_medium';">IDR {{kFormatter(totalPrice)}}</h3>
+            </div>
+        </ion-item>
+    </ion-list>
+    <div class="map">
+        <div id="map"><img ng-src="{{staticMap}}" /></div>
+        <div style="width: 100%;height: 45px;background: #f6cc4c;color: #000;text-align: center;line-height: 38px;font-weight: bold;letter-spacing: 3px;font-family: 'avenir_medium';font-size: 12px;padding: 0 13px;" ng-click="openAddressModal()">
+            <div class="row">
+                <div class="col-90">
+                    <p style="width: 100%; word-wrap: break-word; white-space: nowrap;overflow: hidden; text-overflow: ellipsis;margin:0">{{orderDetail.delivery.drop_address}} {{orderDetail.delivery.drop_address_number}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,23 @@
+[
+	{
+		"id": "001",
+		"name":"MEXICAN COKE 12 OZ.",
+		"price": "20000"
+	},
+	{
+		"id": "002",
+		"name":"MANGGO JUICE",
+		"price": "25000"
+	},
+	{
+		"id": "003",
+		"name":"COFFEE",
+		"price": "30000"
+	},
+	{
+		"id": "004",
+		"name":"MINERAL WATER",
+		"price": "10000"
+	}
+
+]

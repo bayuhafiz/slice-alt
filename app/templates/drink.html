@@ -1,0 +1,25 @@
+<div class="modal">
+    <ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+        <button class="button button-icon icon-left ion-ios-arrow-left" ng-click="closeDrinkModal()"></button>
+        <h1 class="title">DRINKS</h1>
+    </ion-header-bar>
+    <ion-content class="drink-content">
+        <ion-list show-delete="false" can-swipe="true">
+            <ion-item ng-repeat="drink in drinks" style="padding: 25px 35px;">
+                <div class="box" style="width: 35%">
+                    <div class="badges" data-id="{{$index}}">
+                        {{drinkQty}}
+                    </div>
+                    <img class="drink-img" src="img/drinks/drink{{$index}}.png" style="width: 60%;left: 0;">
+                </div>
+                <div class="box" style="width: 65%">
+                    <h2>{{drink.name}}</h2>
+                    <p style="color: #000">IDR {{kFormatter(drink.price)}}</p>
+                    <button class="button button-dark add-drink-btn" ng-click="addDrink(drink,drink.id, $index)">
+                        ADD
+                    </button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</div>

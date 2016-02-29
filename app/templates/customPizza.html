@@ -1,0 +1,44 @@
+<ion-header-bar class="bar-stable" align-title="center" ng-style="{'background-color': viewColor}">
+    <a href="#/menu">
+        <button class="button button-icon icon-left ion-ios-arrow-left"></button>
+    </a>
+    <h1 class="title">Ingredient</h1>
+</ion-header-bar>
+<ion-content class="order-pizza">
+    <div class="pizza-name">
+        <h4>{{customPizzas.name}}</h4>
+        <p>IDR {{kFormatter(customPizzas.price)}}</p>
+    </div>
+    <div class="crust-name">
+        Crust Type
+    </div>
+    <div class="padding">
+        <ion-list>
+            <ion-radio ng-repeat="crust in crusts" ng-value="crust.id" ng-model="select.crust">
+                {{crust.name}}
+            </ion-radio>
+        </ion-list>
+    </div>
+    <div class="crust-name" style="padding-top:50px">
+        Size Type
+    </div>
+    <div class="padding">
+        <ion-list>
+            <ion-radio ng-repeat="sizeType in sizeTypes" ng-value="sizeType.id" ng-model="select.sizeType" name="size-type" ng-change="onSizeChange(sizeType.id)">
+                {{sizeType.type}}
+            </ion-radio>
+        </ion-list>
+        
+    </div>
+    <div class="crust-name" style="padding-top:50px">
+        Special Request
+    </div>
+    <div class="padding">
+        <label class="item-input-wrapper" style="padding-right:0;padding-left:0;border-radius: 6px;">
+            <textarea ng-model="specialRequest"></textarea>
+        </label>
+    </div>
+    <div class="padding">
+        <button class="button button-block button-positive activated btn" ng-click="addItem(customPizzas.name,select.crust, select.sizeType, specialRequest);openModal()">Add To Cart</button>
+    </div>
+</ion-content>

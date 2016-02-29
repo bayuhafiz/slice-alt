@@ -1,0 +1,168 @@
+<ion-header-bar class="bar-stable" style="background:transparent;padding-left: 15px;padding-right: 15px;border: 0;">
+    <button class="button button-icon btn-menu" ng-click="menus()">
+        <i class="icon ion-navicon"></i>
+    </button>
+    <button class="button button-icon btn-cart" style="color:#000" ng-click="openCartModal()">
+        <i class="icon ion-ios-cart-outline"></i>
+        <!--<p ng-modal="itemNum">{{itemNum}}</p>-->
+    </button>
+</ion-header-bar>
+<ion-content style="top: 0;" class="menu-content" has-bouncing="false">
+    <ion-slide-box on-slide-changed="slideChanged(index)" class="slider-box">
+        <ion-slide>
+            <div class="app-name">
+                <div class="box">
+                    <img src="img/LOGO1.png">
+                </div>
+            </div>
+            <div class="title intro-app">
+                <div id="bg-video">
+                    <video autoplay="autoplay" preload=”auto” loop class="video" webkit-playsinline>
+                        <source ng-src="{{videoUrl.src}}" type='video/mp4'>
+                        <!--<source src="img/bg-intro.webm" type='video/webm'>
+                <source src="img/bg-intro.ogg" type='video/ogg'>-->
+                    </video>
+                </div>
+                <div id="intro-title">
+                    <hr style="width: 50px; border-color: #fff;margin: 20px auto;">
+                    <p style="font-family: avenir_black;font-size: 0.5em;letter-spacing: 2px;width: 95%;margin: auto;line-height: 30px;">CURRENTLY CLOSED</p>
+                    <hr style="width: 50px; border-color: #fff;margin: 20px auto;">
+                    <p style="font-size: 12px;text-transform: none;font-style: italic;letter-spacing: 1px;">Service will begin tomorrow at 12am</p>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide ng-repeat="pizzaName in pizzaNames" class="ionSlide" disable-scroll="false">
+            <ion-scroll direction="y" on-scroll="gotScrolled(this)" delegate-handle="contentScroll{{$index}}">
+                <div class="box" ng-model="coba">
+                    <div class="app-name">
+                        <div class="box">
+                            <img src="img/LOGO1.png">
+                        </div>
+                    </div>
+                    <div class="title imgMenu" style="height : {{imgHeight.height}}px; background-image: url('img/pizza/pizzaImg-{{pizzaName.image_id}}.jpg');">
+                        <p style="line-height:35px;">{{ pizzaName.name }}</p>
+                        <div id="pizza_ingredients" style="width: 194px;">
+                            <div style="width: 15%;">
+                                <hr style="margin-right: 5px;">
+                            </div>
+                            <div style="width: 70%;"><span>{{pizzaName.description}}</span></div>
+                            <div style="width: 15%;">
+                                <hr style="margin-left: 5px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list" id="myScroll" style="padding-left: 15px; padding-right: 15px; background: #FFF;clear:both;">
+                        <h2 class="title ingredients" style="padding-bottom: 15px;">
+                            <hr class="line-ing">
+                            <span>INGREDIENTS</span>
+                            <hr class="line-ing">
+                        </h2>
+                        <div class="row" ng-if="$index % 3 === 0" ng-repeat="ingredients in pizzaName.ingredient">
+                            <div class="col col-33" ng-if="$index < pizzaName.ingredient.length">
+                                <div class="ing-box">
+                                    <img src="img/ingredient/{{pizzaName.ingredient[$index].url}}.jpg" class="ingredients-img">
+                                </div>
+                                <p class="list-ingredients">{{pizzaName.ingredient[$index].name}}</p>
+                            </div>
+                            <div class="col col-33" ng-if="$index+1 < pizzaName.ingredient.length">
+                                <div class="ing-box">
+                                    <img src="img/ingredient/{{pizzaName.ingredient[$index+1].url}}.jpg" class="ingredients-img">
+                                </div>
+                                <p class="list-ingredients">{{pizzaName.ingredient[$index+1].name}}</p>
+                            </div>
+                            <div class="col col-33" ng-if="$index+2 < pizzaName.ingredient.length">
+                                <div class="ing-box">
+                                    <img src="img/ingredient/{{pizzaName.ingredient[$index+2].url}}.jpg" class="ingredients-img">
+                                </div>
+                                <p class="list-ingredients">{{pizzaName.ingredient[$index+2].name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list" id="myScroll" style="padding-bottom: 72px;padding-left: 15px;background:#F7F7F7; padding-right: 15px;">
+                        <h2 class="title ingredients" style="padding-top: 20px;">
+                            <hr class="line-ing">
+                            <span>ABOUT THIS MEAL</span>
+                            <hr class="line-ing">
+                        </h2>
+                        <p class="title" style="font-family: 'avenir_light';text-transform: capitalize;font-style: normal;line-height: 1.7em;max-width: 500px; font-size: 15px;">
+                            {{pizzaName.about}}
+                        </p>
+                    </div>
+                </div>
+            </ion-scroll>
+        </ion-slide>
+        <ion-slide class="ionSlide" disable-scroll="false">
+            <ion-scroll direction="y" on-scroll="gotScrolled(this)" delegate-handle="drinkScroll">
+                <div class="box" ng-model="coba">
+                    <div class="app-name">
+                        <div class="box">
+                            <img src="img/LOGO1.png">
+                        </div>
+                    </div>
+                    <div class="title imgMenu" style="height : {{imgHeight.height}}px; background-image: url('img/drinks_page.png');">
+                        <p style="line-height:35px;">DRINKS</p>
+                        <div id="pizza_ingredients" style="    width: 190px;">
+                            <div style="width: 15%;">
+                                <hr style="margin-right: 5px;">
+                            </div>
+                            <div style="width: 70%;"><span>COKE, JUICE, AND MORE</span></div>
+                            <div style="width: 15%;">
+                                <hr style="margin-left: 5px;">
+                            </div>
+                        </div>
+                        <button class="button button-block button-positive add_pizza_btn btn show-drink-menu" ng-click="openDrinkMenu()" style="font-size: 0.8em;">SHOW ME THE GOOD STUFF</button>
+                    </div>
+                    <div class="list drink-content" id="myScroll" style="min-height : {{imgHeight.height}}px;padding-left: 15px; padding-right: 15px; background: #FFF;clear:both;">
+                        <h2 class="title ingredients" style="padding-bottom: 15px;">
+                            <hr class="line-ing">
+                            <span>DRINKS</span>
+                            <hr class="line-ing">
+                        </h2>
+                        <ion-list show-delete="false" can-swipe="true">
+                            <ion-item ng-repeat="drink in drinkss">
+                                <div class="box">
+                                    <div class="badges" data-id="{{$index}}">
+                                        {{drinkQty}}
+                                    </div>
+                                    <img class="drink-img" src="img/drinks/drink{{$index}}.png">
+                                </div>
+                                <div class="box">
+                                    <h2>{{drink.name}}</h2>
+                                    <p style="color: #000">IDR {{kFormatter(drink.price)}}</p>
+                                    <button class="button button-dark add-drink-btn" ng-click="addDrink(drink,drink.id, $index)">
+                                        ADD
+                                    </button>
+                                </div>
+                            </ion-item>
+                        </ion-list>
+                    </div>
+                </div>
+            </ion-scroll>
+        </ion-slide>
+    </ion-slide-box>
+</ion-content>
+<!--<div id="menu-overlay" on-swipe-right="onSwipeRight()"></div>-->
+<div class="menu-pizza animated" data-id="0">
+    <div style="height: 100%;width: 80%;display: table;margin:auto">
+        <div class="app-name">
+            <img ng-src="{{authLogo.src}}" style="width: 100%">
+        </div>
+        <ul class="list" style="width:100%;display:table-cell; vertical-align:middle">
+            <li class="item" ng-click="openProfileModal()">
+                PROFILE
+            </li>
+            <li class="item" ng-click="openAddressModal()">
+                ADDRESS
+            </li>
+            <li class="item" ng-click="openOrdersModal()">
+                ORDERS
+            </li>
+            <li class="item" ng-click="openHelpModal()">
+                GET HELP
+            </li>
+        </ul>
+        <div id="btn-sign-out" class="btn" ng-click="signOut()">
+            SIGN OUT
+        </div>
+    </div>
+</div>
